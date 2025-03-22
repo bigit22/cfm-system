@@ -61,7 +61,7 @@ Install Dependencies
 
 ## 4. Create Superuser
 
-```
+```bash
     python3 manage.py createsuperuser
 ```
 
