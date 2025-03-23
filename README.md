@@ -52,21 +52,21 @@ Install Dependencies
 ## 3. Set Up the Database
 
 ```bash
-    python3 manage.py makemigrations
+    python3 cash_manager/manage.py makemigrations
 ```
 
 ```bash
-    python3 manage.py migrate
+    python3 cash_manager/manage.py migrate
 ```
 
-## 4. Create Superuser
+## 4. Create Superuser (optional)
 
 ```bash
-    python3 manage.py createsuperuser
+    python3 cash_manager/manage.py createsuperuser
 ```
 
 ## 5. Run the server
 
 ```bash
-    python3 manage.py runserver
+    python3 cash_manager/manage.py runserver
 ```
