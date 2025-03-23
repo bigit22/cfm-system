@@ -7,4 +7,3 @@ admin.site.register(TransactionType)
 admin.site.register(Category)
 admin.site.register(Subcategory)
 admin.site.register(Transaction)
-

@@ -12,22 +12,27 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='category',
-            options={'verbose_name': 'Категория', 'verbose_name_plural': 'Категории'},
+            options={'verbose_name': 'Категория',
+                     'verbose_name_plural': 'Категории'},
         ),
         migrations.AlterModelOptions(
             name='status',
-            options={'verbose_name': 'Статус', 'verbose_name_plural': 'Статусы'},
+            options={'verbose_name': 'Статус',
+                     'verbose_name_plural': 'Статусы'},
         ),
         migrations.AlterModelOptions(
             name='subcategory',
-            options={'verbose_name': 'Подкатегория', 'verbose_name_plural': 'Подкатегории'},
+            options={'verbose_name': 'Подкатегория',
+                     'verbose_name_plural': 'Подкатегории'},
         ),
         migrations.AlterModelOptions(
             name='transaction',
-            options={'ordering': ['created_at'], 'verbose_name': 'Транзакция', 'verbose_name_plural': 'Транзакции'},
+            options={'ordering': [
+                'created_at'], 'verbose_name': 'Транзакция', 'verbose_name_plural': 'Транзакции'},
         ),
         migrations.AlterModelOptions(
             name='transactiontype',
-            options={'verbose_name': 'Тип транзакции', 'verbose_name_plural': 'Типы транзакции'},
+            options={'verbose_name': 'Тип транзакции',
+                     'verbose_name_plural': 'Типы транзакции'},
         ),
     ]

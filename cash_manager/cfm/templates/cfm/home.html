@@ -1,5 +1,67 @@
 {% extends 'cfm/layout.html' %}
 
 {% block content %}
-<h1>HELLO BOYS</h1>
+
+<main>
+    <section>
+        <h2>Список Транзакций</h2>
+
+        <form method="GET" class="filter-form">
+            <div class="form-group">
+                <label for="date_from">Дата от:</label>
+                {{ form.date_from }}
+            </div>
+            <div class="form-group">
+                <label for="date_to">Дата до:</label>
+                {{ form.date_to }}
+            </div>
+            <div class="form-group">
+                <label for="status">Статус:</label>
+                {{ form.status }}
+            </div>
+            <div class="form-group">
+                <label for="transaction_type">Тип транзакции:</label>
+                {{ form.transaction_type }}
+            </div>
+            <div class="form-group">
+                <label for="category">Категория:</label>
+                {{ form.category }}
+            </div>
+            <div class="form-group">
+                <label for="subcategory">Подкатегория:</label>
+                {{ form.subcategory }}
+            </div>
+            <button type="submit">Фильтровать</button>
+        </form>
+
+        {% if transactions %}
+            <div class="transaction-list">
+                {% for t in transactions %}
+                    <div class="transaction-item">
+                        <h3>Транзакция #{{ forloop.counter }}</h3>
+                        <p><strong>Дата:</strong> {{ t.created_at }}</p>
+                        <p><strong>Статус:</strong> {{ t.status }}</p>
+                        <p><strong>Тип транзакции:</strong> {{ t.transaction_type }}</p>
+                        <p><strong>Категория:</strong> {{ t.category }}</p>
+                        <p><strong>Подкатегория:</strong> {{ t.subcategory }}</p>
+                        <p><strong>Сумма:</strong> {{ t.amount }}</p>
+                        {% if t.comment %}
+                            <p><strong>Комментарий:</strong> {{ t.comment }}</p>
+                        {% else %}
+                            <p><strong>Комментарий:</strong> нет комментария</p>
+                        {% endif %}
+                        <a href="{% url 'create_edit_transaction' t.id %}" class="edit-button">Редактировать</a>
+                        <form method="POST" class="delete-form" action="{% url 'delete_transaction' t.id %}" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="delete-link" onclick="return confirm('Вы уверены, что хотите удалить эту транзакцию?');">Удалить</button>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h1>Нет транзакций</h1>
+        {% endif %}
+    </section>
+</main>
+
 {% endblock %}

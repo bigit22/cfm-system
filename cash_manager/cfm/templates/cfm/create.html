@@ -1,0 +1,34 @@
+{% extends 'cfm/layout.html' %}
+
+{% block content %}
+<h2>Создание транзакции</h2>
+<form method="post" id="transactionForm">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Сохранить</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const categorySelect = document.getElementById('id_category');
+        const subcategorySelect = document.getElementById('id_subcategory');
+
+        categorySelect.addEventListener('change', function() {
+            const categoryId = this.value;
+
+            fetch('/transactions/get_subcategories/' + categoryId + '/')
+                .then(response => response.json())
+                .then(data => {
+                    subcategorySelect.innerHTML = '';
+                    data.subcategories.forEach(function(subcategory) {
+                        const option = document.createElement('option');
+                        option.value = subcategory.id;
+                        option.textContent = subcategory.name;
+                        subcategorySelect.appendChild(option);
+                    });
+                    subcategorySelect.disabled = false;
+                });
+        });
+    });
+</script>
+{% endblock %}

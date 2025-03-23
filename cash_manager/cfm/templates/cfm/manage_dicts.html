@@ -1,0 +1,77 @@
+{% extends 'cfm/layout.html' %}
+
+{% block content %}
+
+<section>
+    <h2>Статусы</h2>
+    <form action="{% url 'add_status' %}" method="post" class="form-section">
+        {% csrf_token %}
+        {{ status_form.as_p }}
+        <button type="submit">Добавить статус</button>
+    </form>
+
+    <ul class="list-section">
+        {% for status in statuses %}
+            <li class="list-item">
+                {{ status.name }}
+                <a href="{% url 'delete_status' status.pk %}" class="delete-link">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section>
+    <h2>Типы транзакций</h2>
+    <form action="{% url 'add_transaction_type' %}" method="post" class="form-section">
+        {% csrf_token %}
+        {{ transaction_type_form.as_p }}
+        <button type="submit">Добавить тип транзакции</button>
+    </form>
+
+    <ul class="list-section">
+        {% for transaction_type in transaction_types %}
+            <li class="list-item">
+                {{ transaction_type.name }}
+                <a href="{% url 'delete_transaction_type' transaction_type.pk %}" class="delete-link">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section>
+    <h2>Категории</h2>
+    <form action="{% url 'add_category' %}" method="post" class="form-section">
+        {% csrf_token %}
+        {{ category_form.as_p }}
+        <button type="submit">Добавить категорию</button>
+    </form>
+
+    <ul class="list-section">
+        {% for category in categories %}
+            <li class="list-item">
+                {{ category.name }}
+                <a href="{% url 'delete_category' category.pk %}" class="delete-link">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section>
+    <h2>Подкатегории</h2>
+    <form action="{% url 'add_subcategory' %}" method="post" class="form-section">
+        {% csrf_token %}
+        {{ subcategory_form.as_p }}
+        <button type="submit">Добавить подкатегорию</button>
+    </form>
+
+    <ul class="list-section">
+        {% for subcategory in subcategories %}
+            <li class="list-item">
+                {{ subcategory.name }} ({{ subcategory.category.name }})
+                <a href="{% url 'delete_subcategory' subcategory.pk %}" class="delete-link">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}

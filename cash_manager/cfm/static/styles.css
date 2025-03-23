@@ -1,67 +1,231 @@
-* {
-    box-sizing: border-box;
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
     background-color: #f4f4f4;
 }
 
 header {
-    background: #007BFF;
+    background-color: #007bff;
     color: white;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
 }
 
 nav {
-    background: #333;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-button {
+    text-decoration: none;
+    color: white;
 }
 
 nav ul {
     list-style: none;
-    padding: 10px;
+    padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin-right: 15px;
 }
 
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
+    padding: 10px 15px;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+nav a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 main {
     padding: 20px;
 }
 
-section {
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+.transaction-list {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.transaction-item {
+    background-color: #ffffff;
     padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    width: 100%;
+}
+
+.transaction-item:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-item h3 {
+    margin-top: 0;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 500px;
+    width: 100%;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.edit-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+
+.list-section {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.delete-link {
+    color: #ff0000;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    background-color: #f8d7da;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-link:hover {
+    background-color: #f5c6cb;
+    color: #ffffff;
 }
 
 h2 {
-    color: #333;
+    text-align: center;
 }
 
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #333;
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    flex: 1 1 200px;
+    mid-width: 150px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 6px 12px;
+    background-color: #007bff;
     color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.delete-link {
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
 }
