@@ -13,7 +13,7 @@ Before you begin, make sure you have the following installed:
 - [pip](https://pip.pypa.io/en/stable/) (Python package installer)
 - [Virtualenv](https://virtualenv.pypa.io/en/latest/) (optional but recommended for virtual environments)
 
-## Getting Started
+## Installation
 
 Follow these steps to set up your project locally.
 
