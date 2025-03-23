@@ -2,7 +2,9 @@
 
 ## Overview
 
-The CFM System is a Django-based web application designed to... [provide a brief description of what your project does].
+The CFM System is a Django-based web application designed to streamline financial transaction management for users. It provides a user-friendly interface for creating, viewing, and managing financial transactions, enabling users to filter transactions by various criteria such as date range, status, transaction type, category, and subcategory. The application also includes functionalities for managing dictionaries of statuses, transaction types, categories, and subcategories, allowing users to customize their financial categorization effectively.
+
+With the CFM System, users can easily add or delete entries related to statuses, transaction types, categories, and subcategories, ensuring that their financial records remain organized and up-to-date. Additionally, the application supports transaction creation and editing, making it simple to document financial activities accurately. Overall, the CFM System aims to enhance financial tracking and reporting, catering to individuals and businesses seeking better control over their financial data.
 
 ## Prerequisites
 
