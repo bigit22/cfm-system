@@ -70,3 +70,5 @@ Install Dependencies
 ```bash
     python3 cash_manager/manage.py runserver
 ```
+
+## Get http://127.0.0.1:8000/transactions
